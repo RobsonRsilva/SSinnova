@@ -1,0 +1,13 @@
+import { StyleSheet } from "react-native";
+
+export const formularioStyles = StyleSheet.create({
+    input: {
+        borderWidth: 1,
+        borderColor: '#1A418E',
+        alignSelf: 'stretch',
+        borderRadius: 8,
+    },
+    label: {
+        alignSelf: 'flex-start',
+    }
+});

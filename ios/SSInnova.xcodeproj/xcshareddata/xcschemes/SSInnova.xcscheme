@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "SSInnova.app"
-               BlueprintName = "SSInnova"
-               ReferencedContainer = "container:SSInnova.xcodeproj">
+               BuildableName = "SSinnova.app"
+               BlueprintName = "SSinnova"
+               ReferencedContainer = "container:SSinnova.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "SSInnovaTests.xctest"
-               BlueprintName = "SSInnovaTests"
-               ReferencedContainer = "container:SSInnova.xcodeproj">
+               BuildableName = "SSinnovaTests.xctest"
+               BlueprintName = "SSinnovaTests"
+               ReferencedContainer = "container:SSinnova.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "SSInnova.app"
-            BlueprintName = "SSInnova"
-            ReferencedContainer = "container:SSInnova.xcodeproj">
+            BuildableName = "SSinnova.app"
+            BlueprintName = "SSinnova"
+            ReferencedContainer = "container:SSinnova.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "SSInnova.app"
-            BlueprintName = "SSInnova"
-            ReferencedContainer = "container:SSInnova.xcodeproj">
+            BuildableName = "SSinnova.app"
+            BlueprintName = "SSinnova"
+            ReferencedContainer = "container:SSinnova.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

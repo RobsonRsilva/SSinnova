@@ -1,19 +1,31 @@
-import { Text, View, StyleSheet, TextInput, Button } from "react-native";
+import { Alert, Text, View, StyleSheet, TextInput, Button, Pressable } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { formularioStyles } from '../styles/formularioStyles'
+import {useState} from 'react'
 function LoginScreen() {
+ const [email, setEmail] = useState('');
+ const [senha, setSenha] = useState('');
+
+function login(){
+    console.log('Fazer login!');
+    Alert.alert('Login','Fazer login');
+}
+
+
     return (
         <SafeAreaView style={styles.container}>
             <Ionicons name="person-circle" size={100} color="#1A418E" />
-            <Text>Login</Text>
-            <Text style={formularioStyles.label}>Email:</Text>
-            <TextInput style={formularioStyles.input} placeholder="Digite seu melhor email" />
-            <Text style={formularioStyles.label}>Senha:</Text>
-            <TextInput style={formularioStyles.input} placeholder="Digite sua senha" />
+            <Text style={styles.textoLogin}>Login</Text>
+            <Text nativeID="email" style={[formularioStyles.label, styles.textoLabel]}>Email:</Text>
+            <TextInput accessibilityLabelledBy="email" placeholderTextColor='#ff2525' value={email} onChangeText={setEmail} style={formularioStyles.input} placeholder="Digite seu melhor email" />
+            <Text nativeID="senha" style={[formularioStyles.label, styles.textoLabel]}>Senha:</Text>
+            <TextInput accessibilityLabelledBy="senha"  value={senha} onChangeText={setSenha} style={formularioStyles.input} placeholder="Digite sua senha" />
             <Text style={styles.textoEsqueceuSenha}>Esqueceu sua senha?</Text>
-            <Button style={styles.botao} title="Entrar" />
-            <Text style={styles.textoCadastrese}>Não tem conta? <Text>Cadastre-se</Text></Text>
+            <Pressable onPress={login} style={({pressed}) => [formularioStyles.botaoLogin, {opacity : pressed ? 0.85 : 1 }]}>
+                <Text >Entrar</Text>
+            </Pressable>
+            <Text style={styles.textoNaoConta}>Não tem conta? <Text style={styles.textoCadastrese}>Cadastre-se</Text></Text>
         </SafeAreaView>
     );
 }
@@ -29,9 +41,25 @@ const styles = StyleSheet.create({
     textoEsqueceuSenha: {
         alignSelf: 'flex-end',
         marginTop: 10,
+        marginBottom: 10,
+        color: '#1A418E'
+    },
+    textoLogin: {
+        fontSize: 32,
+        fontWeight: 'semibold',
+        color: '#1A418E',
+    },
+    textoLabel: {
+        marginBottom: 5,
+        marginTop: 10,
+    },
+    textoNaoConta: {
+        marginTop: 50,
+        color: '#1A418E',
     },
     textoCadastrese: {
-    marginTop: 10,
+        fontWeight: 'bold',
+
     },
     botao: {
         marginTop: 10,

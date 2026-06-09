@@ -9,5 +9,13 @@ export const formularioStyles = StyleSheet.create({
     },
     label: {
         alignSelf: 'flex-start',
+    },
+    botaoLogin:{
+        alignSelf: 'stretch',
+        backgroundColor: '#1A418E',
+        height: 52,
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 });

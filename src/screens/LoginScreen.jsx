@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { formularioStyles } from '../styles/formularioStyles'
 import {useState} from 'react'
-function LoginScreen() {
+function LoginScreen({navigation}) {
  const [email, setEmail] = useState('');
  const [senha, setSenha] = useState('');
 
@@ -11,8 +11,6 @@ function login(){
     console.log('Fazer login!');
     Alert.alert('Login','Fazer login');
 }
-
-
     return (
         <SafeAreaView style={styles.container}>
             <Ionicons name="person-circle" size={100} color="#1A418E" />
@@ -25,7 +23,7 @@ function login(){
             <Pressable onPress={login} style={({pressed}) => [formularioStyles.botaoLogin, {opacity : pressed ? 0.85 : 1 }]}>
                 <Text >Entrar</Text>
             </Pressable>
-            <Text style={styles.textoNaoConta}>Não tem conta? <Text style={styles.textoCadastrese}>Cadastre-se</Text></Text>
+            <Text style={styles.textoNaoConta}>Não tem conta? <Text onPress={() => navigation.navigate('Cadastro') } style={styles.textoCadastrese}>Cadastre-se</Text></Text>
         </SafeAreaView>
     );
 }

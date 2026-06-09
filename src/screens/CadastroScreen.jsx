@@ -3,7 +3,7 @@ import Ionicons from "@react-native-vector-icons/ionicons";
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-function CadastroScreen() {
+function CadastroScreen({navigation}) {
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');

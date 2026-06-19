@@ -16,6 +16,6 @@ export const formularioStyles = StyleSheet.create({
         height: 52,
         borderRadius: 8,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
     }
 });

@@ -1,6 +1,6 @@
 import { View, Text, ImageBackground } from "react-native";
 
-const imgBG = { uri : '../../res/img/ssinnova-bg-app.png'}
+import imgBG from '../../res/img/ssinnova-bg-app.png'
 
 function InfoScreen() {
     return (

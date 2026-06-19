@@ -1,21 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ImageBackground} from "react-native";
+import imgBG from '../../res/img/ssinnova-bg-app.png';
 
 function HomeScreen({navigation}) {
     return (
-        <View style={styles.container}>
-            <View style={styles.titulo}>
-                <Text>Olá Mundo!</Text>
-            </View>
-            <View style={[styles.quadrado, styles.amarelo]}>
-                <Text style={styles.fonteMedia}>1</Text>
-            </View>
-            <View style={[styles.quadrado, styles.rosa]}>
-                <Text style={styles.fonteMedia}>2</Text>
-            </View>
-            <View style={[styles.quadrado, styles.preto]}>
-                <Text style={[styles.textoBranco, styles.fonteMedia]}>3</Text>
-            </View>
-        </View>
+       <ImageBackground style={{flex: 1}} source={imgBG} resizeMode="cover">
+               <View>
+                   <Text>
+                       Página Histórico
+                   </Text>
+               </View>
+        </ImageBackground>
     );
 }
 export default HomeScreen;

@@ -17,7 +17,10 @@ function LoginScreen({ navigation }) {
      });
      let dadosUsuario = await response.json();
      if(dadosUsuario.status){
-     Alert.alert('Sucesso!');
+     navigation.replace('Routes', {
+     screen: 'Home',
+     params: {dadosUsuario},
+     });
      }else{
         Alert.alert('Erro');
      }

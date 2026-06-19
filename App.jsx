@@ -11,7 +11,7 @@ function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Routes'>
+        <Stack.Navigator initialRouteName='Login'>
           <Stack.Screen options={{headerShown: false}} name="Routes" component={Routes} />
           <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
           <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />

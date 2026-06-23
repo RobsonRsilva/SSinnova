@@ -3,27 +3,38 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { formularioStyles } from '../styles/formularioStyles'
 import { useState } from 'react'
+import { createAsyncStorage } from "@react-native-async-storage/async-storage";
+const storage = createAsyncStorage('SSInnova');
 function LoginScreen({ navigation }) {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
     const rotaLogin = "https://devgarca.com.br/ssinnova/api/public/index.php?rota=login";
 
+    async function salvarDados(token, usuario) {
+        try {
+         await storage.setItem('token', token);
+         await storage.setItem('usuario', JSON.stringify(usuario));
+        } catch (erro) {
+            console.log(erro);
+        }
+    }
     async function Login() {
-     let response = await fetch(rotaLogin, {
-       method: 'POST',
-       headers: { 'Content-Type': 'application/json' },
-       body: JSON.stringify({email, senha}) ,
-     });
-     let dadosUsuario = await response.json();
-     if(dadosUsuario.status){
-     navigation.replace('Routes', {
-     screen: 'Home',
-     params: {dadosUsuario},
-     });
-     }else{
-        Alert.alert('Erro');
-     }
+        let response = await fetch(rotaLogin, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, senha }),
+        });
+        let dadosUsuario = await response.json();
+        if (dadosUsuario.status) {
+            salvarDados(dadosUsuario.token, dadosUsuario.usuario);
+            navigation.replace('Routes', {
+                token: dadosUsuario.token,
+                usuario: dadosUsuario.usuario,
+            });
+        } else {
+            Alert.alert('Erro');
+        }
     }
     return (
         <SafeAreaView style={styles.container}>

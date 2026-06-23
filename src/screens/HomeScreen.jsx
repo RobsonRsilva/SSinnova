@@ -1,14 +1,72 @@
-import { StyleSheet, Text, View, ImageBackground} from "react-native";
+import { StyleSheet, Text, View, ImageBackground, ScrollView, Image, Pressable } from "react-native";
 import imgBG from '../../res/img/ssinnova-bg-app.png';
 
-function HomeScreen({navigation}) {
+function HomeScreen({ navigation, route }) {
+    const dados = route.params ?? {};
     return (
-       <ImageBackground style={{flex: 1}} source={imgBG} resizeMode="cover">
-               <View>
-                   <Text>
-                       Página Histórico
-                   </Text>
-               </View>
+        <ImageBackground style={{ flex: 1 }} source={imgBG} resizeMode="cover">
+            <View>
+                <Text>
+                    Token:   {dados?.token}
+                </Text>
+            </View>
+            <ScrollView horizontal={true}>
+                <Pressable onPress={() => navigation.navigate('Info')}>
+                    <View style={{ padding: 10}} >
+                        <Image source={require('../../res/img/home/Background-1.png')} />
+                        <Text style={{ alignSelf: 'center' }}>Pizzas</Text>
+                    </View>
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('Info')}>
+                    <View style={{ padding: 10}}>
+                        <Image source={require('../../res/img/home/Background-1.png')} />
+                        <Text style={{ alignSelf: 'center' }}>Pizzas</Text>
+                    </View>
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('Info')}>
+                    <View style={{ padding: 10}}>
+                        <Image source={require('../../res/img/home/Background-1.png')} />
+                        <Text style={{ alignSelf: 'center' }}>Pizzas</Text>
+                    </View>
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('Info')}>
+                    <View style={{ padding: 10}}>
+                        <Image source={require('../../res/img/home/Background-1.png')} />
+                        <Text style={{ alignSelf: 'center' }}>Pizzas</Text>
+                    </View>
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('Info')}>
+                    <View style={{ padding: 10}}>
+                        <Image source={require('../../res/img/home/Background-1.png')} />
+                        <Text style={{ alignSelf: 'center' }}>Pizzas</Text>
+                    </View>
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('Info')}>
+                    <View style={{ padding: 10}}>
+                        <Image source={require('../../res/img/home/Background-1.png')} />
+                        <Text style={{ alignSelf: 'center' }}>Pizzas</Text>
+                    </View>
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('Info')}>
+                    <View style={{ padding: 10}}>
+                        <Image source={require('../../res/img/home/Background-1.png')} />
+                        <Text style={{ alignSelf: 'center' }}>Pizzas</Text>
+                    </View>
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('Info')}>
+                    <View style={{ padding: 10}}>
+                        <Image source={require('../../res/img/home/Background-1.png')} />
+                        <Text style={{ alignSelf: 'center' }}>Pizzas</Text>
+                    </View>
+                </Pressable>
+                <Pressable onPress={() => navigation.navigate('Info')}>
+                    <View style={{ padding: 10}}>
+                        <Image source={require('../../res/img/home/Background-1.png')} />
+                        <Text style={{ alignSelf: 'center' }}>Pizzas</Text>
+                    </View>
+                </Pressable>
+
+            </ScrollView>
         </ImageBackground>
     );
 }
@@ -26,13 +84,13 @@ const styles = StyleSheet.create({
     },
     quadrado: {
         justifyContent: 'center',
-        alignItems : 'center',
+        alignItems: 'center',
         width: 100,
         height: 100,
     },
     rosa: {
         flex: 0,
-        alignSelf : 'center',
+        alignSelf: 'center',
         backgroundColor: '#f308d754'
     },
     amarelo: {

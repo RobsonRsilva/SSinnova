@@ -4,7 +4,9 @@ import InfoScreen from "../screens/InfoScreen";
 import HistoricoScreen from "../screens/HistoricoScreen";
 import Ionicons from "@react-native-vector-icons/ionicons/static";
 const Tab = createBottomTabNavigator();
-function Routes() {
+function Routes({route}) {
+   const dados = route.params ?? {}; 
+   console.log(dados);
     return (
         <Tab.Navigator screenOptions={({ route }) => ({
             tabBarIcon: ({ size, color }) => {
@@ -22,7 +24,10 @@ function Routes() {
             tabBarActiveTintColor: '#7a9cf3',
             tabBarInactiveTintColor: '#FFF'
         })}>
-            <Tab.Screen options={{headerStyle: {backgroundColor: '#1D439B'}, headerTintColor : '#FFF' }} name="Home" component={HomeScreen} />
+            <Tab.Screen options={{headerStyle: {backgroundColor: '#1D439B'}, headerTintColor : '#FFF' }} 
+            name="Home" 
+            component={HomeScreen}
+            initialParams={dados} />
             <Tab.Screen name="Info" component={InfoScreen} />
             <Tab.Screen name="Historico" component={HistoricoScreen} />
         </Tab.Navigator>
